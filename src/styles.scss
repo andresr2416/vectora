@@ -12,6 +12,28 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: all 0.3s ease;
+  }
+  
+  /* Modo Oscuro */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+
+
+    .sidebar {
+        width: 200px;
+        background-color: #121212;
+        box-shadow: 4px 0px 6px 0px rgba(255, 255, 255, 0.397);
+        color: #7f56d6;
+   
+    }
+
+  }
+
 .content-container {
     height: 100%;
     width: 100%;

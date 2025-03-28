@@ -1,6 +1,10 @@
 <nav *ngIf="isAuthenticated" class="navbar">
     <div class="navbar-content">
         <img style="width: 40px" src="vectorbanklogo.png" alt="Vector Bank" />
-      <button  mat-flat-button (click)="logout()">Logout</button>
+        <div>
+
+          <button mat-flat-button (click)="toggleTheme()">Cambiar a Modo Oscuro</button>
+        <button  mat-flat-button (click)="logout()">Logout</button>
+        </div>
     </div>
   </nav>
