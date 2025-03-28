@@ -1,0 +1,61 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .accounts-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .account-card {
+    background-color: #232a34;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    position: relative;
+  }
+  
+  .account-card:hover {
+    background-color: #444;
+  }
+  
+  .account-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .account-info p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: end;
+  }
+  
+  .details-button {
+    background-color: #7f56d6;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .details-button:hover {
+    background-color: #e6b800;
+  }

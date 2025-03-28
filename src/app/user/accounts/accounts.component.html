@@ -1,27 +1,45 @@
-<!-- src/app/user/accounts/accounts.component.html -->
-<div class="accounts-container">
-    <h2>Mis Cuentas Bancarias</h2>
-  
-    <!-- Tabla de cuentas -->
+<div class="content-container">
+  <div class="accounts-container">
+    <div class="accounts-header">
+      <h2>Mis Cuentas Bancarias</h2>
+      <button
+        mat-raised-button
+        matTooltip="Agregar cuenta"
+        matTooltipPosition="above"
+        color="primary"
+        (click)="openCreateAccountDialog()"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
     <table mat-table [dataSource]="accounts">
       <ng-container matColumnDef="accountNumber">
-        <th mat-header-cell *matHeaderCellDef> Número de Cuenta </th>
-        <td mat-cell *matCellDef="let account"> {{ account.accountNumber }} </td>
+        <th mat-header-cell *matHeaderCellDef>Número de Cuenta</th>
+        <td mat-cell *matCellDef="let account">{{ account.accountNumber }}</td>
       </ng-container>
-  
+
       <ng-container matColumnDef="type">
-        <th mat-header-cell *matHeaderCellDef> Tipo de Cuenta </th>
-        <td mat-cell *matCellDef="let account"> {{ account.type }} </td>
+        <th mat-header-cell *matHeaderCellDef>Tipo de Cuenta</th>
+        <td mat-cell *matCellDef="let account">{{ account.accountType }}</td>
       </ng-container>
-  
+
       <ng-container matColumnDef="balance">
-        <th mat-header-cell *matHeaderCellDef> Saldo </th>
-        <td mat-cell *matCellDef="let account"> {{ account.balance }} </td>
+        <th mat-header-cell *matHeaderCellDef>Saldo</th>
+        <td mat-cell *matCellDef="let account">{{ account.balance }}</td>
       </ng-container>
-  
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let account">
+          <button mat-icon-button (click)="openAccountDetailsDialog(account)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
       <!-- Definimos las filas -->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
   </div>
-  
+</div>

@@ -1,0 +1,22 @@
+<div class="dashboard-container">
+  <app-sidebar (goToAccounts)="goToAccounts()"></app-sidebar>
+  <div class="main-content">
+    <div *ngIf="showAccountsCards">
+      <h1>Tus cuentas</h1>
+      <div class="accounts-cards">
+        <div *ngFor="let account of accounts" class="account-card">
+          <div class="account-info">
+            <h3>Tipo de cuenta: {{ account.accountType }}</h3>
+            <h4>Numero: {{ account.accountNumber }}</h4>
+            <p>
+              Saldos disponible: <br />
+              ${{ account.balance }}
+            </p>
+          </div>
+          <button class="details-button">Conoce más de tu cuenta</button>
+        </div>
+      </div>
+    </div>
+    <router-outlet *ngIf="!showAccountsCards"></router-outlet>
+  </div>
+</div>

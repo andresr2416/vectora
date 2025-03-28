@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Detalles de la Cuenta</h2>
+<mat-dialog-content>
+  <p><strong>Número de Cuenta:</strong> {{ account.accountNumber }}</p>
+  <p><strong>Tipo de Cuenta:</strong> {{ account.accountType }}</p>
+  <p><strong>Saldo:</strong> {{ account.balance  }}</p>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cerrar</button>
+</div>

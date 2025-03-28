@@ -1,28 +1,45 @@
 <!-- src/app/user/login/login.component.html -->
-<div class="login-container">
+<div class="content-container">
+  <div class="side-image">
+
+  </div>
+
+  <div class="login-container">
+    <div class="logos">
+      <img style="width: 40px" src="vectorbanklogo.png" alt="Vector Bank" />
+      <img style="width: 120px" src="vectorbank.png" alt="Vector" />
+    </div>
     <h2>Inicio de Sesión</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Correo Electrónico</mat-label>
         <input matInput formControlName="email" type="email" />
         <mat-error *ngIf="email?.invalid && email?.touched">
           El correo es obligatorio y debe ser válido.
         </mat-error>
       </mat-form-field>
-  
-      <mat-form-field appearance="fill">
+
+      <mat-form-field appearance="outline">
         <mat-label>Contraseña</mat-label>
         <input matInput formControlName="password" type="password" />
         <mat-error *ngIf="password?.invalid && password?.touched">
           La contraseña es obligatoria.
         </mat-error>
       </mat-form-field>
-  
+
       <div *ngIf="loginError" class="error">
         {{ loginError }}
       </div>
-  
-      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+
+      <button
+      class="login-button"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Iniciar Sesión
+      </button>
     </form>
   </div>
-  
+</div>

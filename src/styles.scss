@@ -3,12 +3,24 @@
 html,
 body {
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
+
 }
 
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.content-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.mdc-text-field__input {
+    color: #7f56d6 !important;
+}
+

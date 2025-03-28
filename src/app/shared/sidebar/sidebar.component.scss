@@ -1,0 +1,29 @@
+.sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    box-shadow: 4px 0px 6px 0px #00000033;
+    color: #7f56d6;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-nav-list {
+    margin-top: 20px;
+}
+
+mat-list-item {
+    color: white;
+    text-transform: uppercase;
+}
+
+mat-list-item:hover {
+    background-color: #444;
+}
+
+button {
+    width: 100%;
+    background-color: #7f56d6;
+    color: #ffffff;
+}

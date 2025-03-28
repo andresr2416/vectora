@@ -2,25 +2,66 @@
   "users": [
     {
       "id": "1",
-      "email": "test@banco.com",
+      "email": "test@vectorbank.com",
       "password": "1234",
-      "token": "mocked-token"
+      "token": "3b1f4b1c-6f7b-4b7b-8b1c-3b1f4b1c6f7b"
+    },
+    {
+      "id": "2",
+      "email": "andres@vectorbank.com",
+      "password": "1234",
+      "token": "8b1c-3b1f4b1c6f7b-3b1f4b1c6f7b"
     }
   ],
   "accounts": [
     {
       "id": "1",
       "userId": 1,
-      "type": "Ahorros",
+      "accountType": "Ahorros",
       "balance": 1000,
       "accountNumber": "12345678"
     },
     {
       "id": "2",
       "userId": 1,
-      "type": "Corriente",
+      "accountType": "Corriente",
       "balance": 5000,
       "accountNumber": "87654321"
+    },
+    {
+      "id": "3",
+      "userId": 2,
+      "accountType": "Ahorros",
+      "balance": 1000,
+      "accountNumber": "56781234"
+    },
+    {
+      "id": "aa68",
+      "accountNumber": "20405809",
+      "accountType": "Corriente",
+      "balance": 0,
+      "userId": 2
+    },
+    {
+      "id": "ab54",
+      "accountNumber": "13643979",
+      "accountType": "Ahorros",
+      "balance": 0,
+      "userId": 2
+    },
+    {
+      "id": "56bb",
+      "accountNumber": "27397173",
+      "accountType": "Corriente",
+      "balance": 0,
+      "userId": 2
+    },
+    {
+      "id": "25df",
+      "accountNumber": "63639622",
+      "accountType": "Corriente",
+      "balance": 0,
+      "userId": 2
     }
   ]
 }

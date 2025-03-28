@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 import { MaterialModule } from '../../material/material.module';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -30,7 +30,7 @@ export class LoginComponent {
       this.authService.authenticate(email, password).subscribe(response => {
         if (response && response.token) {
           localStorage.setItem('jwt', response.token);  // Guardamos el token en el localStorage
-          this.router.navigate(['/accounts']);  // Redirigimos a la página de cuentas
+          this.router.navigate(['/dashboard']);  // Redirigimos a la página de cuentas
         } else {
           this.loginError = 'Credenciales incorrectas. Intenta nuevamente.';
         }
