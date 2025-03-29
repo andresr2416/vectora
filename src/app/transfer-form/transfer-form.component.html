@@ -1,0 +1,35 @@
+<form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+    <!-- Cuenta Origen -->
+    <mat-form-field appearance="fill">
+      <mat-label>Cuenta Origen</mat-label>
+      <input matInput formControlName="originAccount"  [readOnly]="true" />
+    </mat-form-field>
+  
+    <!-- Cuenta Destino -->
+    <mat-form-field appearance="fill">
+      <mat-label>Cuenta Destino</mat-label>
+      <mat-select formControlName="destinationAccount" required>
+        <mat-option *ngFor="let account of accountDestination" [value]="account.id">
+          {{ account.accountNumber }} - {{ account.accountType }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- Monto -->
+    <mat-form-field appearance="fill">
+      <mat-label>Monto</mat-label>
+      <input matInput formControlName="amount" type="number" required />
+    </mat-form-field>
+  
+    <!-- Descripción -->
+    <mat-form-field appearance="fill">
+      <mat-label>Descripción</mat-label>
+      <input matInput formControlName="description" required />
+    </mat-form-field>
+  
+    <!-- Botón de envío -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="transferForm.invalid">
+      Realizar Transferencia
+    </button>
+  </form>
+  

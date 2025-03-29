@@ -22,10 +22,8 @@ export class NavbarComponent {
   toggleTheme() {
     const body = document.body;
 
-    // Alternar la clase "dark-mode"
     body.classList.toggle('dark-mode');
     
-    // Actualizar el texto del botón dependiendo del modo actual
     const button = document.querySelector('button');
     if (body.classList.contains('dark-mode')) {
       if (button) {

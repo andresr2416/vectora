@@ -19,49 +19,139 @@
       "userId": 1,
       "accountType": "Ahorros",
       "balance": 1000,
-      "accountNumber": "12345678"
+      "accountNumber": 12345678
     },
     {
       "id": "2",
       "userId": 1,
       "accountType": "Corriente",
-      "balance": 5000,
-      "accountNumber": "87654321"
+      "balance": 4000,
+      "accountNumber": 87654321
     },
     {
       "id": "3",
       "userId": 2,
       "accountType": "Ahorros",
-      "balance": 1000,
-      "accountNumber": "56781234"
+      "balance": 500,
+      "accountNumber": 56781234
     },
     {
-      "id": "aa68",
-      "accountNumber": "20405809",
-      "accountType": "Corriente",
-      "balance": 0,
-      "userId": 2
-    },
-    {
-      "id": "ab54",
-      "accountNumber": "13643979",
+      "id": "6a37",
+      "accountNumber": 65604815,
       "accountType": "Ahorros",
-      "balance": 0,
+      "balance": 500,
       "userId": 2
     },
     {
-      "id": "56bb",
-      "accountNumber": "27397173",
-      "accountType": "Corriente",
-      "balance": 0,
-      "userId": 2
+      "id": "5496",
+      "accountNumber": "49649456",
+      "accountType": "Ahorros",
+      "balance": 100,
+      "userId": 1
     },
     {
-      "id": "25df",
-      "accountNumber": "63639622",
+      "id": "8be9",
+      "accountNumber": "45571263",
       "accountType": "Corriente",
-      "balance": 0,
-      "userId": 2
+      "balance": 600,
+      "userId": 1
+    },
+    {
+      "id": "640a",
+      "accountNumber": "55225473",
+      "accountType": "Corriente",
+      "balance": 300,
+      "userId": 1
+    }
+  ],
+  "transactions": [
+    {
+      "id": "21ef",
+      "originAccountId": 65604815,
+      "destinationAccountId": 56781234,
+      "amount": 250,
+      "description": "test",
+      "timestamp": "2025-03-29T03:04:10.695Z"
+    },
+    {
+      "id": "3e30",
+      "originAccountId": 65604815,
+      "destinationAccountId": 56781234,
+      "amount": 250,
+      "description": "test",
+      "timestamp": "2025-03-29T03:12:41.030Z"
+    },
+    {
+      "id": "84bc",
+      "originAccountId": 56781234,
+      "destinationAccountId": 65604815,
+      "amount": 250,
+      "description": "test",
+      "timestamp": "2025-03-29T03:13:28.349Z"
+    },
+    {
+      "id": "4f24",
+      "originAccountId": 87654321,
+      "destinationAccountId": 12345678,
+      "amount": 3000,
+      "description": "test",
+      "timestamp": "2025-03-29T03:25:18.442Z"
+    },
+    {
+      "id": "1430",
+      "originAccountId": 12345678,
+      "destinationAccountId": 87654321,
+      "amount": 3510,
+      "description": "test",
+      "timestamp": "2025-03-29T03:25:39.034Z"
+    },
+    {
+      "id": "a741",
+      "originAccountId": 12345678,
+      "destinationAccountId": 87654321,
+      "amount": 100,
+      "description": "test",
+      "timestamp": "2025-03-29T03:26:16.013Z"
+    },
+    {
+      "id": "153f",
+      "originAccountId": 12345678,
+      "destinationAccountId": 55225473,
+      "amount": 100,
+      "description": "prueba ",
+      "timestamp": "2025-03-29T04:13:13.271Z"
+    },
+    {
+      "id": "ba8a",
+      "originAccountId": 87654321,
+      "destinationAccountId": 45571263,
+      "amount": 600,
+      "description": "prueba",
+      "timestamp": "2025-03-29T04:13:52.601Z"
+    },
+    {
+      "id": "28c7",
+      "originAccountId": 87654321,
+      "destinationAccountId": 49649456,
+      "amount": 100,
+      "description": "test",
+      "timestamp": "2025-03-29T04:14:20.313Z"
+    },
+    {
+      "id": "b6b6",
+      "originAccountId": 12345678,
+      "destinationAccountId": 55225473,
+      "amount": 200,
+      "description": "test",
+      "timestamp": "2025-03-29T04:14:32.729Z"
+    },
+    {
+      "id": "04f0",
+      "originAccountId": 87654321,
+      "destinationAccountId": 12345678,
+      "amount": 400,
+      "description": "Prueba de envio",
+      "timestamp": "2025-03-29T04:41:54.091Z"
     }
   ]
 }
