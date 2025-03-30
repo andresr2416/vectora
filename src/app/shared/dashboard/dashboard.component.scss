@@ -11,6 +11,10 @@
   overflow-y: auto;
 }
 
+h1 {
+  color: #000;
+}
+
 
 
 .account-card {
@@ -78,18 +82,14 @@
   }
 }
 
-.mat-mdc-table {
-  min-width: fit-content;
-  border: 2px solid #7f56d6 !important;
-  border-spacing: 10px 0 !important;
-  background-color: #7f56d6 !important;
-  width: fit-content !important;
-  border-radius: 10px;
-  margin: 16px 0;
 
+
+.empty-state {
+  margin-top: 16px;
 }
 
-.table-container {
-  display: flex;
-  justify-content: center;
+
+.empty-state {
+  text-align: center;
+  font-size: 18px;
 }

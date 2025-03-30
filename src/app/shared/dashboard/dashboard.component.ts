@@ -34,8 +34,8 @@ export class DashboardComponent {
     'originAccountId',
     'destinationAccountId',
     'amount',
-    'description',
     'timestamp',
+    'transactionType'
   ];
 
   constructor(
@@ -99,5 +99,9 @@ export class DashboardComponent {
   goToAccounts() {
     this.showAccountsCards = false;
     this.router.navigate(['/dashboard/accounts']);
+  }
+  goToHistory() {
+    this.showAccountsCards = false;
+    this.router.navigate(['/dashboard/history']);
   }
 }

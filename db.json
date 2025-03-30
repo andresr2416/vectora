@@ -32,14 +32,14 @@
       "id": "3",
       "userId": 2,
       "accountType": "Ahorros",
-      "balance": 500,
+      "balance": 600,
       "accountNumber": 56781234
     },
     {
       "id": "6a37",
       "accountNumber": 65604815,
       "accountType": "Ahorros",
-      "balance": 500,
+      "balance": 150,
       "userId": 2
     },
     {
@@ -62,96 +62,69 @@
       "accountType": "Corriente",
       "balance": 300,
       "userId": 1
+    },
+    {
+      "id": "4f7b",
+      "accountNumber": "87174835",
+      "accountType": "Ahorros",
+      "balance": 250,
+      "userId": 2
     }
   ],
   "transactions": [
     {
-      "id": "21ef",
-      "originAccountId": 65604815,
-      "destinationAccountId": 56781234,
-      "amount": 250,
-      "description": "test",
-      "timestamp": "2025-03-29T03:04:10.695Z"
-    },
-    {
-      "id": "3e30",
-      "originAccountId": 65604815,
-      "destinationAccountId": 56781234,
-      "amount": 250,
-      "description": "test",
-      "timestamp": "2025-03-29T03:12:41.030Z"
-    },
-    {
-      "id": "84bc",
+      "id": "11fe",
       "originAccountId": 56781234,
       "destinationAccountId": 65604815,
+      "amount": 150,
+      "description": "test",
+      "timestamp": "2025-03-29T22:48:39.864Z",
+      "transactionType": "gasto"
+    },
+    {
+      "id": "6f16",
+      "originAccountId": 65604815,
+      "destinationAccountId": 56781234,
+      "amount": 150,
+      "description": "test",
+      "timestamp": "2025-03-29T22:48:39.870Z",
+      "transactionType": "ingreso"
+    },
+    {
+      "id": "f085",
+      "originAccountId": 65604815,
+      "destinationAccountId": 56781234,
+      "amount": 500,
+      "description": "envio de nuevo",
+      "timestamp": "2025-03-29T22:52:41.808Z",
+      "transactionType": "gasto"
+    },
+    {
+      "id": "5a09",
+      "originAccountId": 56781234,
+      "destinationAccountId": 65604815,
+      "amount": 500,
+      "description": "envio de nuevo",
+      "timestamp": "2025-03-29T22:52:41.816Z",
+      "transactionType": "ingreso"
+    },
+    {
+      "id": "844f",
+      "originAccountId": 56781234,
+      "destinationAccountId": 87174835,
       "amount": 250,
-      "description": "test",
-      "timestamp": "2025-03-29T03:13:28.349Z"
+      "description": "envio a nueva cuenta",
+      "timestamp": "2025-03-29T23:38:32.535Z",
+      "transactionType": "gasto"
     },
     {
-      "id": "4f24",
-      "originAccountId": 87654321,
-      "destinationAccountId": 12345678,
-      "amount": 3000,
-      "description": "test",
-      "timestamp": "2025-03-29T03:25:18.442Z"
-    },
-    {
-      "id": "1430",
-      "originAccountId": 12345678,
-      "destinationAccountId": 87654321,
-      "amount": 3510,
-      "description": "test",
-      "timestamp": "2025-03-29T03:25:39.034Z"
-    },
-    {
-      "id": "a741",
-      "originAccountId": 12345678,
-      "destinationAccountId": 87654321,
-      "amount": 100,
-      "description": "test",
-      "timestamp": "2025-03-29T03:26:16.013Z"
-    },
-    {
-      "id": "153f",
-      "originAccountId": 12345678,
-      "destinationAccountId": 55225473,
-      "amount": 100,
-      "description": "prueba ",
-      "timestamp": "2025-03-29T04:13:13.271Z"
-    },
-    {
-      "id": "ba8a",
-      "originAccountId": 87654321,
-      "destinationAccountId": 45571263,
-      "amount": 600,
-      "description": "prueba",
-      "timestamp": "2025-03-29T04:13:52.601Z"
-    },
-    {
-      "id": "28c7",
-      "originAccountId": 87654321,
-      "destinationAccountId": 49649456,
-      "amount": 100,
-      "description": "test",
-      "timestamp": "2025-03-29T04:14:20.313Z"
-    },
-    {
-      "id": "b6b6",
-      "originAccountId": 12345678,
-      "destinationAccountId": 55225473,
-      "amount": 200,
-      "description": "test",
-      "timestamp": "2025-03-29T04:14:32.729Z"
-    },
-    {
-      "id": "04f0",
-      "originAccountId": 87654321,
-      "destinationAccountId": 12345678,
-      "amount": 400,
-      "description": "Prueba de envio",
-      "timestamp": "2025-03-29T04:41:54.091Z"
+      "id": "8699",
+      "originAccountId": 87174835,
+      "destinationAccountId": 56781234,
+      "amount": 250,
+      "description": "envio a nueva cuenta",
+      "timestamp": "2025-03-29T23:38:32.543Z",
+      "transactionType": "ingreso"
     }
   ]
 }

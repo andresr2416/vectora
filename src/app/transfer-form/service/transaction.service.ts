@@ -9,9 +9,13 @@ import { Transaction } from '../model/transaction.model';
 })
 export class TransactionService {
   private apiUrl = 'http://localhost:3000'; 
-
+  
   constructor(private http: HttpClient) {}
-
+  
+    getTransactions(): Observable<Transaction[]> {
+      return this.http.get<Transaction[]>(`${this.apiUrl}/transactions`);
+    }
+  
   updateAccountBalances(
     originAccountId: number,
     destinationAccountId: number,
@@ -55,7 +59,10 @@ export class TransactionService {
     originAccountId: number,
     destinationAccountId: number,
     amount: number,
-    description: string
+    description: string,
+    transactionTypeOrigin: string = 'gasto', // Por defecto será 'gasto' para la cuenta de origen
+    transactionTypeDestination: string = 'ingreso' // Por defecto será 'ingreso' para la cuenta de destino
+    
   ): Observable<any> {
     const transaction = {
       originAccountId,
@@ -63,6 +70,7 @@ export class TransactionService {
       amount,
       description,
       timestamp: new Date().toISOString(),
+      transactionType: transactionTypeOrigin !== transactionTypeDestination ? 'gasto' : 'ingreso',
     };
 
     return this.http.post(`${this.apiUrl}/transactions`, transaction); 

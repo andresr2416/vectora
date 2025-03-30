@@ -95,6 +95,9 @@ export class TransferFormComponent implements OnInit {
       return;
     }
 
+    const transactionTypeOrigin = 'gasto';  // La cuenta origen es un gasto
+    const transactionTypeDestination = 'ingreso';  // La cuenta destino es un ingreso
+
 
     if (parsedAmount > originAccountData.balance) {
       Swal.fire(
@@ -105,43 +108,50 @@ export class TransferFormComponent implements OnInit {
       return;
     }
 
-    this.transactionService
-      .createTransaction(
-        Number(originAccountData.accountNumber),
+    this.transactionService.createTransaction(
+      Number(originAccountData.accountNumber),
+      Number(destinationAccountData?.accountNumber),
+      parsedAmount,
+      description,
+      transactionTypeOrigin
+    ).subscribe(() => {
+      // Crear la transacción para la cuenta destino (ingreso)
+      this.transactionService.createTransaction(
         Number(destinationAccountData?.accountNumber),
+        Number(originAccountData.accountNumber),
         parsedAmount,
-        description
-      )
-      .subscribe(() => {
-        this.transactionService
-          .updateAccountBalances(
-            originAccount,
-            destinationAccount,
-            parsedAmount
-          )
-          .subscribe(() => {
-            Swal.fire({
-              title: '¿Confirmar transferencia?',
-              text: `Cuenta origen: ${originAccountData.accountNumber} 
-                     \nCuenta destino: ${destinationAccount?.accountNumber}
-                     \nMonto: $${parsedAmount} 
-                     \nDescripción: ${description}`,
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonText: 'Confirmar',
-              cancelButtonText: 'Cancelar',
-            }).then((result) => {
-              if (result.isConfirmed) {
-                Swal.fire(
-                  'Transferencia Realizada',
-                  'La transferencia ha sido realizada exitosamente',
-                  'success'
-                );
-                this.loadAccounts();
-                this.dialogRef.close();
-              }
-            });
+        description,
+        transactionTypeDestination
+      ).subscribe(() => {
+        // Actualizar balances de las cuentas
+        this.transactionService.updateAccountBalances(
+          originAccount,
+          destinationAccount,
+          parsedAmount
+        ).subscribe(() => {
+          Swal.fire({
+            title: '¿Confirmar transferencia?',
+            text: `Cuenta origen: ${originAccountData.accountNumber} 
+                   \nCuenta destino: ${destinationAccountData?.accountNumber}
+                   \nMonto: $${parsedAmount} 
+                   \nDescripción: ${description}`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Transferencia Realizada',
+                'La transferencia ha sido realizada exitosamente',
+                'success'
+              );
+              this.loadAccounts();
+              this.dialogRef.close();
+            }
           });
+        });
       });
+    });
   }
 }
