@@ -1,0 +1,72 @@
+.side-image {
+    background-image: url('../../../../public/vectorside.png');
+    background-size: contain;
+    background-position: center;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: #f3e6ff;
+}
+
+.content-container {
+    align-items: center;
+}
+
+form {
+    width: 50%;
+  
+}
+
+.login-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: -10px 0px 10px 0px #7f56d6;;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+h2 {
+    color: #7f56d6;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.mat-mdc-form-field-error {
+    width: 100%;
+
+}
+
+.mat-mdc-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+button.login-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7f56d6;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[disabled] {
+    color: #000;
+    background-color: #afacaf70;
+}

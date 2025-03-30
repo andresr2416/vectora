@@ -1,0 +1,95 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+h1 {
+  color: #000;
+}
+
+
+
+.account-card {
+  background-color: #232a34;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+  position: relative;
+}
+
+.account-card:hover {
+  background-color: #444;
+}
+
+.account-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.account-info p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: end;
+}
+
+.details-button {
+  background-color: #7f56d6;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+  background-color: #e6b800;
+}
+
+.sidenav {
+  background-color: #7f56d6;
+  padding: 20px;
+}
+
+.sidenav-content {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin: 0 10px;
+  }
+}
+
+
+
+.empty-state {
+  margin-top: 16px;
+}
+
+
+.empty-state {
+  text-align: center;
+  font-size: 18px;
+}

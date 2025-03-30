@@ -1,0 +1,126 @@
+
+<mat-drawer-container class="content-container" autosize>
+
+  <mat-drawer #drawer class="sidenav" mode="side" [opened]="drawerOpened">
+    <p (click)="goToDashboard()">Dashboard</p>
+    <mat-nav-list>
+      <a mat-list-item (click)="goToAccounts()">Cuentas</a>
+      <a mat-list-item (click)="goToHistory()">Historial de Transacciones</a>
+  
+    </mat-nav-list>
+  </mat-drawer>
+  <div class="sidenav-content">
+    <mat-slide-toggle
+      [(ngModel)]="drawerOpened"
+      (click)="drawerOpened = !drawerOpened"
+      color="primary"
+      class="example-margin"
+    >
+    </mat-slide-toggle>
+    <div *ngIf="showAccountsCards">
+      <h1>Resumen</h1>
+      <div class="accounts-cards">
+        <swiper-container
+          [slidesPerView]="2"
+          [loop]="false" 
+          space-between="30"
+          effect="cards"
+        >
+          <swiper-slide *ngFor="let account of accounts">
+            <div class="account-card">
+              <div class="account-info">
+                <h3>Tipo de cuenta: {{ account.accountType }}</h3>
+                <h4>Numero: {{ account.accountNumber }}</h4>
+                <p>
+                  Saldo disponible: <br />
+                  ${{ account.balance }}
+                </p>
+              </div>
+              <div class="button-container">
+
+                <button mat-raised-button (click)="openTransferDialog(account)">
+                  Realizar Transferencia
+                </button>
+                <button mat-raised-button (click)="showAccountMovements(account)">
+                  Ver Movimientos
+                </button>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+
+      <div class="table-container">
+        <mat-table
+        *ngIf="accountMovements.length >0 && showMovements ; else noMovements"
+        [dataSource]="accountMovements"
+      >
+        <!-- Cuenta Origen Column -->
+        <ng-container matColumnDef="originAccountId">
+          <th mat-header-cell *matHeaderCellDef>Cuenta Origen</th>
+          <td mat-cell *matCellDef="let movement">
+            {{ movement.originAccountId }}
+          </td>
+        </ng-container>
+
+        <!-- Cuenta Destino Column -->
+        <ng-container matColumnDef="destinationAccountId">
+          <th mat-header-cell *matHeaderCellDef>Cuenta Destino</th>
+          <td mat-cell *matCellDef="let movement">
+            {{ movement.destinationAccountId }}
+          </td>
+        </ng-container>
+
+        <!-- Monto Column -->
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef>Monto</th>
+          <td mat-cell *matCellDef="let movement">
+            {{ movement.amount | currency }}
+          </td>
+        </ng-container>      
+
+        <!-- Fecha Column -->
+        <ng-container matColumnDef="timestamp">
+          <th mat-header-cell *matHeaderCellDef>Fecha</th>
+          <td mat-cell *matCellDef="let movement">
+            {{ movement.timestamp | date : "short" }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionType">
+          <th mat-header-cell *matHeaderCellDef> Tipo </th>
+          <td mat-cell *matCellDef="let transaction">
+            <span [ngClass]="{
+              'pill': true,
+              'badge-green': transaction.transactionType === 'ingreso',
+              'badge-red': transaction.transactionType === 'gasto'
+            }">
+              {{ transaction.transactionType === 'ingreso' ? 'Ingreso' : 'Gasto' }}
+            </span>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </mat-table>
+
+
+      <!-- Empty State -->
+      <ng-template #noMovements>
+        <div class="empty-state">
+          <mat-icon>info_outline</mat-icon>
+          <span>No hay movimientos disponibles.</span>
+        </div>
+      </ng-template>
+
+      <!-- Cargando Spinner -->
+      <mat-spinner *ngIf="isLoading" diameter="50"></mat-spinner>
+      </div>
+
+   
+    </div>
+
+    <!-- Aquí se cargará el contenido de Accounts, que debe ser mostrado cuando la ruta cambie -->
+    <router-outlet *ngIf="!showAccountsCards"></router-outlet>
+  </div>
+</mat-drawer-container>

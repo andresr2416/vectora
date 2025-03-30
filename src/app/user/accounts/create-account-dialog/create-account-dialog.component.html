@@ -1,0 +1,23 @@
+
+<h2 mat-dialog-title>Crear Nueva Cuenta</h2>
+<form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Tipo de Cuenta</mat-label>
+    <mat-select formControlName="accountType" (selectionChange)="onAccountTypeChange()">
+      <mat-option value="Ahorros">Ahorros</mat-option>
+      <mat-option value="Corriente">Corriente</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Número de Cuenta</mat-label>
+    <input matInput formControlName="accountNumber" [readonly]="true" />
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="accountForm.invalid">
+      Crear Cuenta
+    </button>
+  </div>
+</form>

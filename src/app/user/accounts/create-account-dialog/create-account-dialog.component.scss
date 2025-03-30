@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los campos */
+    padding: 16px; /* Añadimos un relleno al formulario */
+  }
+
+  mat-form-field {
+    width: 100%;  /* Hacemos que los campos de formulario ocupen todo el ancho disponible */
+  }
+
+  mat-select,
+  mat-input {
+    width: 100%;  /* Aseguramos que los campos de entrada sean de 100% de ancho */
+  }
+
+  
